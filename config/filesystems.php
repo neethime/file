@@ -65,6 +65,11 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'projectUploads' => [
+            'driver' => 'local',
+            'root' => storage_path('files/projects'),
+        ],
+
     ],
 
 ];

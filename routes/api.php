@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
 
     Route::post('/upload', 'FilesController@upload');
+    Route::get('/download', 'FilesController@download');
 
 });
