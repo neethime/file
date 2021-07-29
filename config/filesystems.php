@@ -70,6 +70,11 @@ return [
             'root' => storage_path('files/projects'),
         ],
 
+        'standardizedUploads' => [
+            'driver' => 'local',
+            'root' => storage_path('files/standardized'),
+        ],
+
     ],
 
 ];

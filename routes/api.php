@@ -20,3 +20,10 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/download', 'FilesController@download');
 
 });
+
+Route::group(['prefix' => 'v2'], function () {
+
+    Route::post('/upload', 'FilesController@upload2');
+    Route::get('/download', 'FilesController@download2');
+
+});
