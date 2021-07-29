@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FileRequest;
+use App\Http\Requests\FileRequest2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -40,7 +41,7 @@ class FilesController extends Controller
         }
     }
 
-    public function upload2(FileRequest $request)
+    public function upload2(FileRequest2 $request)
     {
         $token = $request->token;
         if ($token != env('FILE_TOKEN'))
@@ -58,7 +59,7 @@ class FilesController extends Controller
         }
     }
 
-    public function download2(FileRequest $request)
+    public function download2(FileRequest2 $request)
     {
         $token = $request->token;
         if ($token != env('FILE_TOKEN'))
