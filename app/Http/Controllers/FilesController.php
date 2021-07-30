@@ -54,7 +54,13 @@ class FilesController extends Controller
             $folderName = "$model/$modelId/$field";
             $fileName = $file->getClientOriginalName();
             Storage::disk('standardizedUploads')->putFileAs($folderName, $file, $fileName);
-            return response()->json(['code' => 1, 'path' => "$folderName/$fileName"]);
+            return response()->json([
+                'code' => 1,
+                'path' => "$folderName/$fileName",
+                'model_id' => $modelId,
+                'model' => $model,
+                'field' => $field,
+            ]);
         } catch (\Exception $exception) {
             return response()->json(['code' => 0, 'msg' => $exception->getMessage()], $exception->getCode());
         }
