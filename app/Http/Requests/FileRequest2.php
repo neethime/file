@@ -27,6 +27,7 @@ class FileRequest2 extends FormRequest
                 return [
                     'file' => 'required',
                     'token' => 'required',
+                    'model' => 'required',
                     'field' => 'required',
                     'model_id' =>'required|uuid',
                 ];
@@ -51,7 +52,8 @@ class FileRequest2 extends FormRequest
         return [
             'file.required' => '文件不能为空',
             'token.required' => 'token不能为空',
-            'field.required' => '存储类型不能为空',
+            'model.required' => '类名不能为空',
+            'field.required' => '字段名不能为空',
             'file_path.required' => '存储路径不能为空',
             'model_id.required' => '实体ID不能为空',
             'model_id.uuid' => '实体ID格式不正确',

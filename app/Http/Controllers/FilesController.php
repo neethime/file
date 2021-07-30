@@ -48,9 +48,10 @@ class FilesController extends Controller
             return response()->json(['msg' => 'token错误'], 412);
         try {
             $file = $request->file;
-            $modelId = $request->id;
+            $modelId = $request->model_id;
+            $model = $request->model;
             $field = $request->field;
-            $folderName = "$modelId/$field";
+            $folderName = "$model/$modelId/$field";
             $fileName = $file->getClientOriginalName();
             Storage::disk('standardizedUploads')->putFileAs($folderName, $file, $fileName);
             return response()->json(['code' => 1, 'path' => "$folderName/$fileName"]);
